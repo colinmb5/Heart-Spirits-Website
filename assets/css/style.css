@@ -6,15 +6,15 @@
     --header-height: 3.5rem
 
     /* Colors */
-    --hue: 0;
-    --first-color: hsl(0, 100%, 58%);
-    --first-color-alt: hsl(0, 100%, 38%);
-    --first-color-light: hsl(0, 100%, 78%);
-    --first-color-lighten: hsl(0, 100%, 97%);
-    --title-color: hsl(0, 4%, 15%);
-    --text-color: hsl(0, 4%, 35%);
-    --text-color-light: hsl(0, 4%, 55%);
-    --body-color: hsl(0, 0%, 100%);
+    --hue: 353;
+    --first-color: hsl(353, 87%, 43%);
+    --first-color-alt: hsl(353, 80%, 38%);
+    --first-color-light: hsl(353, 80%, 78%);
+    --first-color-lighten: hsl(353, 80%, 97%);
+    --title-color: hsl(353, 4%, 15%);
+    --text-color: hsl(353, 4%, 35%);
+    --text-color-light: hsl(353, 4%, 55%);
+    --body-color: hsl(353, 0%, 100%);
     --container-color: #FFF;
 
     /* Font and Typography */
@@ -122,4 +122,84 @@ img{
 .main{
     /* For animation */
     overflow: hidden; 
+}
+/* Header */
+.header{
+    width: 100%;
+    background-color: var(--body-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+/* Nav */
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_logo,
+.nav_toggle,
+.nav_close{
+    color: var(--title-color);
+}
+.nav_logo{
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    transition: .3s;
+}
+.nav_logo-icon{
+    width: 50px;
+}
+.nav_logo:hover{
+    color: var(--first-color);
+}
+.nav_toggle{
+    display: inline-flex;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .nav_menu{
+        position: fixed;
+        background-color: var(--container-color);
+        width: 80%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        box-shadow: -2px 0 4px hsla(150, 24%, 15%, .1);
+        padding: 4rem 0 0 3rem;
+        border-radius: 1rem 0 0 1rem;
+        transition: .3s;
+        z-index: var(--z-fixed);
+    }
+}
+.nav_close{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+}
+.nav_list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+.nav_link{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    transition: .3s;
+}
+.nav_link:hover{
+    color: var(--first-color);
+}
+
+/* Show Menu */
+.show-menu{
+    right: 0;
 }
